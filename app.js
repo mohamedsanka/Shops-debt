@@ -1,21 +1,22 @@
 let deferredPrompt;
+const installBtn = document.getElementById('install-btn');
 
+// Listen for the install event
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  const installBtn = document.getElementById('install-btn');
-  installBtn.style.display = 'block';
-
-  installBtn.addEventListener('click', async () => {
-    installBtn.style.display = 'none';
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') {
-      alert('App installed!');
-    }
-    deferredPrompt = null;
-  });
+  e.preventDefault(); // Prevent the automatic prompt
+  deferredPrompt = e; // Save the event for later
+  installBtn.style.display = 'block'; // Show the button
 });
+
+installBtn.addEventListener('click', async () => {
+  if (!deferredPrompt) return; // Exit if event not saved
+  deferredPrompt.prompt(); // Show install prompt
+  const { outcome } = await deferredPrompt.userChoice;
+  console.log('User choice:', outcome); // "accepted" or "dismissed"
+  deferredPrompt = null; // Clear it
+  installBtn.style.display = 'none'; // Optional: hide button
+});
+
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
