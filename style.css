@@ -51,9 +51,9 @@ button {
   background: #049f42;
   color: white;
   font-weight: bold;
-  cursor: pointer;
+  
   border: none;
-  transition: background 0.3s ease;
+ 
 }
 
 button a{
@@ -78,7 +78,7 @@ button:hover {
   background: #ff4d4d;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
+  
 }
 
 .debt-item button:hover {
