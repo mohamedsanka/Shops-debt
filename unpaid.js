@@ -24,7 +24,7 @@ async function showUnpaid() {
       const item = document.createElement('div');
       item.className = 'debt-item';
       item.innerHTML = `• $${d.amount} - ${d.date} ${d.time} - ${d.phone} 
-        <button onclick="markPaid(${d.id})">Mark Paid</button>`;
+        <button onclick="markPaid(${d.id})">Bixiyay</button>`;
       div.appendChild(item);
     });
     unpaidList.appendChild(div);
