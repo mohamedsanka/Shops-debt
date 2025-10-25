@@ -1,0 +1,117 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif; 
+  background: #004466;
+  color: #004466;
+  margin: 0;
+  padding: 1rem;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+main {
+  max-width: 550px;
+  margin: 2rem auto;
+  background: #004466;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 70, 102, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input, button {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #007f66;
+}
+
+input:focus {
+  border-color: #00b38f;
+  box-shadow: 0 0 5px #00b38f66;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: #049f42;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+button a{
+text-decoration: none;
+}
+
+button:hover {
+  background: #00b38f;
+}
+
+.debt-item {
+  display: flex;
+  justify-content: space-between;
+  background: #e6fff6;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  border-left: 5px solid #007f66;
+  border-radius: 10px;
+}
+
+.debt-item button {
+  background: #ff4d4d;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.debt-item button:hover {
+  background: #cc0000;
+}
+
+#total {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-buttons button, .nav-buttons a button {
+  flex: 1;
+  min-width: 100px;
+}
+
+.nav-buttons button svg, button svg {
+  vertical-align: middle;
+  margin-right: 61px;
+}
+
+footer {
+  text-align:center;
+  margin-top:2rem;
+  font-size:0.9rem;
+  color:grey;
+}
+
