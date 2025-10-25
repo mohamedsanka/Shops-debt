@@ -1,3 +1,43 @@
+
+
+
+const loginPopup = document.getElementById('login-popup');
+const mainContent = document.getElementById('main-content');
+const loginBtn = document.getElementById('login-btn');
+const loginError = document.getElementById('login-error');
+
+// Example credentials
+const validName = "Sanka";
+const validPassword = "1234";
+
+// Check if user is already logged in
+if (localStorage.getItem('isLoggedIn') === 'true') {
+  loginPopup.style.display = 'none';
+  mainContent.style.display = 'block';
+}
+
+// Login button click
+loginBtn.addEventListener('click', () => {
+  const name = document.getElementById('login-name').value;
+  const password = document.getElementById('login-password').value;
+
+  if (name === validName && password === validPassword) {
+    localStorage.setItem('isLoggedIn', 'true'); // remember login
+    loginPopup.style.display = 'none';
+    mainContent.style.display = 'block';
+  } else {
+    loginError.style.display = 'block';
+  }
+});
+
+// Optional: Add a logout function
+function logout() {
+  localStorage.removeItem('isLoggedIn');
+  loginPopup.style.display = 'flex';
+  mainContent.style.display = 'none';
+}
+
+
 let deferredPrompt;
 const installBtn = document.getElementById('install-btn');
 
